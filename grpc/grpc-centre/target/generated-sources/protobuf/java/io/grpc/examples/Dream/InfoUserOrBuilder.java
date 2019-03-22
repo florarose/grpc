@@ -27,6 +27,11 @@ public interface InfoUserOrBuilder extends
       getNameBytes();
 
   /**
+   * <code>int32 score = 6;</code>
+   */
+  int getScore();
+
+  /**
    * <code>string password = 3;</code>
    */
   java.lang.String getPassword();

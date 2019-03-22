@@ -16,6 +16,7 @@ service Infuture {
     rpc getByUserId(myRequest) returns (InfoUser) {}
     // 根据用户id获取用户信息的服务(具体服务/函数)
     rpc getNameById(myRequest) returns (InfoUser) {}
+    rpc insertUser(InfoUser) returns(InfoUser){}
 }
 
 // The request message containing the user's name.
@@ -29,6 +30,7 @@ message myRequest {
 message InfoUser {
     int32  id  = 1;  //id
     string name = 2;
+    int32 score=6;
     string password = 3;
     string address = 4;
     string message = 5;

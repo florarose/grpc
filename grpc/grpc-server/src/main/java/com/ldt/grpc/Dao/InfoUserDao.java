@@ -1,7 +1,7 @@
-package src.java.com.ldt.grpc.Dao;
+package com.ldt.grpc.Dao;
 
-import src.java.com.ldt.grpc.DBTools.DBTools;
-import src.java.com.ldt.grpc.mapper.InfoUserMapper;
+import com.ldt.grpc.DBTools.DBTools;
+import com.ldt.grpc.mapper.InfoUserMapper;
 import io.grpc.examples.Dream.InfoUser;
 import org.apache.ibatis.session.SqlSession;
 
@@ -29,6 +29,12 @@ public class InfoUserDao {
         String result = mapper.findInfoUser(id);
         sqlSession.commit();
         return result;
+    }
+
+    public boolean insertUs(String name){
+        boolean flag = mapper.insertUser(name);
+        sqlSession.commit();
+        return flag;
     }
 
 //    public InfoUser getNameById(int id) {

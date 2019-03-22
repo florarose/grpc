@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private InfoUser() {
     id_ = 0;
     name_ = "";
+    score_ = 0;
     password_ = "";
     address_ = "";
     message_ = "";
@@ -85,6 +86,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             message_ = s;
+            break;
+          }
+          case 48: {
+
+            score_ = input.readInt32();
             break;
           }
         }
@@ -156,6 +162,15 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SCORE_FIELD_NUMBER = 6;
+  private int score_;
+  /**
+   * <code>int32 score = 6;</code>
+   */
+  public int getScore() {
+    return score_;
   }
 
   public static final int PASSWORD_FIELD_NUMBER = 3;
@@ -287,6 +302,9 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, message_);
     }
+    if (score_ != 0) {
+      output.writeInt32(6, score_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -311,6 +329,10 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, message_);
     }
+    if (score_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, score_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -331,6 +353,8 @@ private static final long serialVersionUID = 0L;
         == other.getId());
     result = result && getName()
         .equals(other.getName());
+    result = result && (getScore()
+        == other.getScore());
     result = result && getPassword()
         .equals(other.getPassword());
     result = result && getAddress()
@@ -352,6 +376,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getId();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + getScore();
     hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
     hash = (53 * hash) + getPassword().hashCode();
     hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
@@ -495,6 +521,8 @@ private static final long serialVersionUID = 0L;
 
       name_ = "";
 
+      score_ = 0;
+
       password_ = "";
 
       address_ = "";
@@ -525,6 +553,7 @@ private static final long serialVersionUID = 0L;
       io.grpc.examples.Dream.InfoUser result = new io.grpc.examples.Dream.InfoUser(this);
       result.id_ = id_;
       result.name_ = name_;
+      result.score_ = score_;
       result.password_ = password_;
       result.address_ = address_;
       result.message_ = message_;
@@ -575,6 +604,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getScore() != 0) {
+        setScore(other.getScore());
       }
       if (!other.getPassword().isEmpty()) {
         password_ = other.password_;
@@ -718,6 +750,32 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int score_ ;
+    /**
+     * <code>int32 score = 6;</code>
+     */
+    public int getScore() {
+      return score_;
+    }
+    /**
+     * <code>int32 score = 6;</code>
+     */
+    public Builder setScore(int value) {
+      
+      score_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 score = 6;</code>
+     */
+    public Builder clearScore() {
+      
+      score_ = 0;
       onChanged();
       return this;
     }

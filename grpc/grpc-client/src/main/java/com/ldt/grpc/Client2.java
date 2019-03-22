@@ -1,6 +1,5 @@
 package com.ldt.grpc;
 
-import grpc.utils.PropertiesTest;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
@@ -72,17 +71,18 @@ public class Client2 {
         }
         logger.info("User: " + response.getName());
     }
-    public void getName(Integer userId){
-        InfoUser response;
+    public String getName(Integer userId){
+        InfoUser response ;
         myRequest myrequest = myRequest.newBuilder().setId(userId).build();
         try {
             response = blockingStub.getNameById(myrequest);
+            return response.getName();
         } catch (StatusRuntimeException e) {
             logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
-            return;
+             return null ;
         }
-        logger.info("User: " + response.getName());
     }
+
     /**
      * Greet server. If provided, the first element of {@code args} is the name to use in the
      * greeting.

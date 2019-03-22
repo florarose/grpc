@@ -1,8 +1,8 @@
-package src.java.com.ldt.grpc;
+package com.ldt.grpc;
 
-import src.java.com.ldt.grpc.Dao.InfoUserDao;
+import com.ldt.grpc.Dao.InfoUserDao;
 import io.grpc.examples.Dream.InfoUser;
-import src.java.com.ldt.grpc.Dao.InfoUserDao;
+import com.ldt.grpc.Dao.InfoUserDao;
 
 public class test {
     public static void main(String[] args) throws Exception {

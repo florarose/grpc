@@ -1,9 +1,7 @@
-package src.java.com.ldt.grpc.Server;
+package com.ldt.grpc.Server;
 
-import src.java.com.ldt.grpc.Server2;
-import src.java.com.ldt.grpc.impl.UserServiceImpl;
-import grpc.utils.PropertiesTest;
-import io.grpc.BindableService;
+import com.ldt.grpc.PropertiesTest;
+import com.ldt.grpc.impl.UserServiceImpl;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 

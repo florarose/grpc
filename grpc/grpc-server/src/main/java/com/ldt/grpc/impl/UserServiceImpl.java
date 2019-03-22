@@ -1,13 +1,11 @@
-package src.java.com.ldt.grpc.impl;
+package com.ldt.grpc.impl;
 
-import src.java.com.ldt.grpc.Dao.InfoUserDao;
-import src.java.com.ldt.grpc.Server2;
+import com.ldt.grpc.Dao.InfoUserDao;
 import io.grpc.examples.Dream.HelloRequest;
 import io.grpc.examples.Dream.InfoUser;
 import io.grpc.examples.Dream.InfutureGrpc;
 import io.grpc.examples.Dream.myRequest;
 import io.grpc.stub.StreamObserver;
-import src.java.com.ldt.grpc.Dao.InfoUserDao;
 
 import java.util.logging.Logger;
 
@@ -50,11 +48,22 @@ public class UserServiceImpl extends InfutureGrpc.InfutureImplBase {
     @Override
     public void getNameById(myRequest request, StreamObserver<InfoUser> responseObserver) {
         long userId = request.getId();
-        String infoUser = infoUserDao.getNameById(3);
+        String infoUser = infoUserDao.getNameById((int)userId);
         InfoUser reply = InfoUser.newBuilder().setName(infoUser).build();
 //        InfoUser reply = InfoUser.newBuilder().setMessage("uuuu " + request.getId()).build();
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
     }
 
+    @Override
+    public void insertUser(InfoUser request, StreamObserver<InfoUser> responseObserver) {
+        boolean flag = infoUserDao.insertUs(request.getName());
+        String result = "success";
+        if(!flag){
+            result = "false";
+        }
+        InfoUser reply = InfoUser.newBuilder().setName(result).build();
+        responseObserver.onNext(reply);
+        responseObserver.onCompleted();
+    }
 }

@@ -1,6 +1,7 @@
 package com.ldt.grpc.constants;
 
-import grpc.utils.PropertiesTest;
+
+import com.ldt.grpc.PropertiesTest;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package src.java.com.ldt.grpc.DBTools;
+package com.ldt.grpc.DBTools;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -12,7 +12,7 @@ public class DBTools {
 
     static {
         try {
-            Reader reader = Resources.getResourceAsReader("src/resources/mybatis_cfg.xml");
+            Reader reader = Resources.getResourceAsReader("mybatis_cfg.xml");
             sessionFactory = new SqlSessionFactoryBuilder().build(reader);
         } catch (Exception e) {
             e.printStackTrace();

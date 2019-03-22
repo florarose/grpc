@@ -40,16 +40,17 @@ public final class DreamProto {
     java.lang.String[] descriptorData = {
       "\n\020helloworld.proto\022\005dream\"\034\n\014HelloReques" +
       "t\022\014\n\004name\030\001 \001(\t\"\027\n\tmyRequest\022\n\n\002id\030\001 \001(\005" +
-      "\"X\n\010InfoUser\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020" +
-      "\n\010password\030\003 \001(\t\022\017\n\007address\030\004 \001(\t\022\017\n\007mes" +
-      "sage\030\005 \001(\t2\337\001\n\010Infuture\0222\n\010SayHello\022\023.dr" +
-      "eam.HelloRequest\032\017.dream.InfoUser\"\000\0227\n\rS" +
-      "ayHelloAgain\022\023.dream.HelloRequest\032\017.drea" +
-      "m.InfoUser\"\000\0222\n\013getByUserId\022\020.dream.myRe" +
-      "quest\032\017.dream.InfoUser\"\000\0222\n\013getNameById\022" +
-      "\020.dream.myRequest\032\017.dream.InfoUser\"\000B,\n\026" +
-      "io.grpc.examples.DreamB\nDreamProtoP\001\242\002\003H" +
-      "LWb\006proto3"
+      "\"g\n\010InfoUser\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\r" +
+      "\n\005score\030\006 \001(\005\022\020\n\010password\030\003 \001(\t\022\017\n\007addre" +
+      "ss\030\004 \001(\t\022\017\n\007message\030\005 \001(\t2\221\002\n\010Infuture\0222" +
+      "\n\010SayHello\022\023.dream.HelloRequest\032\017.dream." +
+      "InfoUser\"\000\0227\n\rSayHelloAgain\022\023.dream.Hell" +
+      "oRequest\032\017.dream.InfoUser\"\000\0222\n\013getByUser" +
+      "Id\022\020.dream.myRequest\032\017.dream.InfoUser\"\000\022" +
+      "2\n\013getNameById\022\020.dream.myRequest\032\017.dream" +
+      ".InfoUser\"\000\0220\n\ninsertUser\022\017.dream.InfoUs" +
+      "er\032\017.dream.InfoUser\"\000B,\n\026io.grpc.example" +
+      "s.DreamB\nDreamProtoP\001\242\002\003HLWb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -80,7 +81,7 @@ public final class DreamProto {
     internal_static_dream_InfoUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_dream_InfoUser_descriptor,
-        new java.lang.String[] { "Id", "Name", "Password", "Address", "Message", });
+        new java.lang.String[] { "Id", "Name", "Score", "Password", "Address", "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

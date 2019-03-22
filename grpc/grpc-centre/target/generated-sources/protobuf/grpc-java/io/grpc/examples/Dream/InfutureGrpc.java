@@ -178,6 +178,43 @@ public final class InfutureGrpc {
      }
      return getGetNameByIdMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getInsertUserMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<io.grpc.examples.Dream.InfoUser,
+      io.grpc.examples.Dream.InfoUser> METHOD_INSERT_USER = getInsertUserMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<io.grpc.examples.Dream.InfoUser,
+      io.grpc.examples.Dream.InfoUser> getInsertUserMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<io.grpc.examples.Dream.InfoUser,
+      io.grpc.examples.Dream.InfoUser> getInsertUserMethod() {
+    return getInsertUserMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<io.grpc.examples.Dream.InfoUser,
+      io.grpc.examples.Dream.InfoUser> getInsertUserMethodHelper() {
+    io.grpc.MethodDescriptor<io.grpc.examples.Dream.InfoUser, io.grpc.examples.Dream.InfoUser> getInsertUserMethod;
+    if ((getInsertUserMethod = InfutureGrpc.getInsertUserMethod) == null) {
+      synchronized (InfutureGrpc.class) {
+        if ((getInsertUserMethod = InfutureGrpc.getInsertUserMethod) == null) {
+          InfutureGrpc.getInsertUserMethod = getInsertUserMethod = 
+              io.grpc.MethodDescriptor.<io.grpc.examples.Dream.InfoUser, io.grpc.examples.Dream.InfoUser>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "dream.Infuture", "insertUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.examples.Dream.InfoUser.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.examples.Dream.InfoUser.getDefaultInstance()))
+                  .setSchemaDescriptor(new InfutureMethodDescriptorSupplier("insertUser"))
+                  .build();
+          }
+        }
+     }
+     return getInsertUserMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -246,6 +283,13 @@ public final class InfutureGrpc {
       asyncUnimplementedUnaryCall(getGetNameByIdMethodHelper(), responseObserver);
     }
 
+    /**
+     */
+    public void insertUser(io.grpc.examples.Dream.InfoUser request,
+        io.grpc.stub.StreamObserver<io.grpc.examples.Dream.InfoUser> responseObserver) {
+      asyncUnimplementedUnaryCall(getInsertUserMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -276,6 +320,13 @@ public final class InfutureGrpc {
                 io.grpc.examples.Dream.myRequest,
                 io.grpc.examples.Dream.InfoUser>(
                   this, METHODID_GET_NAME_BY_ID)))
+          .addMethod(
+            getInsertUserMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.examples.Dream.InfoUser,
+                io.grpc.examples.Dream.InfoUser>(
+                  this, METHODID_INSERT_USER)))
           .build();
     }
   }
@@ -341,6 +392,14 @@ public final class InfutureGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetNameByIdMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void insertUser(io.grpc.examples.Dream.InfoUser request,
+        io.grpc.stub.StreamObserver<io.grpc.examples.Dream.InfoUser> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getInsertUserMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -399,6 +458,13 @@ public final class InfutureGrpc {
     public io.grpc.examples.Dream.InfoUser getNameById(io.grpc.examples.Dream.myRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetNameByIdMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public io.grpc.examples.Dream.InfoUser insertUser(io.grpc.examples.Dream.InfoUser request) {
+      return blockingUnaryCall(
+          getChannel(), getInsertUserMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -463,12 +529,21 @@ public final class InfutureGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetNameByIdMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.examples.Dream.InfoUser> insertUser(
+        io.grpc.examples.Dream.InfoUser request) {
+      return futureUnaryCall(
+          getChannel().newCall(getInsertUserMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SAY_HELLO = 0;
   private static final int METHODID_SAY_HELLO_AGAIN = 1;
   private static final int METHODID_GET_BY_USER_ID = 2;
   private static final int METHODID_GET_NAME_BY_ID = 3;
+  private static final int METHODID_INSERT_USER = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -501,6 +576,10 @@ public final class InfutureGrpc {
           break;
         case METHODID_GET_NAME_BY_ID:
           serviceImpl.getNameById((io.grpc.examples.Dream.myRequest) request,
+              (io.grpc.stub.StreamObserver<io.grpc.examples.Dream.InfoUser>) responseObserver);
+          break;
+        case METHODID_INSERT_USER:
+          serviceImpl.insertUser((io.grpc.examples.Dream.InfoUser) request,
               (io.grpc.stub.StreamObserver<io.grpc.examples.Dream.InfoUser>) responseObserver);
           break;
         default:
@@ -568,6 +647,7 @@ public final class InfutureGrpc {
               .addMethod(getSayHelloAgainMethodHelper())
               .addMethod(getGetByUserIdMethodHelper())
               .addMethod(getGetNameByIdMethodHelper())
+              .addMethod(getInsertUserMethodHelper())
               .build();
         }
       }
