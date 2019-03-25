@@ -1,6 +1,6 @@
 package com.ldt.grpc.ClientUse;
 
-import com.ldt.grpc.Client2;
+import com.ldt.grpc.UserClient;
 import com.ldt.grpc.Nsq.Produce;
 import com.ldt.grpc.constants.Constants;
 
@@ -21,7 +21,7 @@ public class consumerApi {
     }
 
     public String getName(Integer id){
-        Client2 client = new Client2(Constants.host(), Constants.port());
+        UserClient client = new UserClient(Constants.host(), Constants.port());
          String name=  client.getName(id);
          return name;
     }

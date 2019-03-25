@@ -30,7 +30,7 @@ public class Consumer {
         consumer.getTotalMessages();
         //线程睡眠，让程序执行完
         try {
-            Thread.sleep(2000);
+            Thread.sleep(200000);
             System.out.println("等你1000");
         } catch (InterruptedException e) {
             e.printStackTrace();

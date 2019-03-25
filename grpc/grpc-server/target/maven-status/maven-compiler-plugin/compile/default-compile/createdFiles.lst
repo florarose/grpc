@@ -6,4 +6,5 @@ com\ldt\grpc\Server\ServerGrpc$1.class
 com\ldt\grpc\Api\UserApi.class
 com\ldt\grpc\impl\UserServiceImpl.class
 com\ldt\grpc\mapper\InfoUserMapper.class
+com\ldt\grpc\DBTools\DBTools.class
 com\ldt\grpc\Dao\RecordDao.class
