@@ -1,10 +1,8 @@
 package com.ldt.grpc.impl;
 
 import com.ldt.grpc.Dao.InfoUserDao;
-import io.grpc.examples.Dream.HelloRequest;
-import io.grpc.examples.Dream.InfoUser;
-import io.grpc.examples.Dream.InfutureGrpc;
-import io.grpc.examples.Dream.myRequest;
+import com.ldt.grpc.Dao.RecordDao;
+import io.grpc.examples.Dream.*;
 import io.grpc.stub.StreamObserver;
 
 import java.util.logging.Logger;
@@ -14,6 +12,7 @@ public class UserServiceImpl extends InfutureGrpc.InfutureImplBase {
     private static final Logger logger = Logger.getLogger(UserServiceImpl.class.getName());
 
     private InfoUserDao infoUserDao =new InfoUserDao();
+    private RecordDao recordDao = new RecordDao();
 
     @Override
     public void sayHello(HelloRequest req, StreamObserver<InfoUser> responseObserver) {
@@ -50,6 +49,7 @@ public class UserServiceImpl extends InfutureGrpc.InfutureImplBase {
         long userId = request.getId();
         String infoUser = infoUserDao.getNameById((int)userId);
         InfoUser reply = InfoUser.newBuilder().setName(infoUser).build();
+        System.out.println("查询结果为："+infoUser);
 //        InfoUser reply = InfoUser.newBuilder().setMessage("uuuu " + request.getId()).build();
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
@@ -63,6 +63,14 @@ public class UserServiceImpl extends InfutureGrpc.InfutureImplBase {
             result = "false";
         }
         InfoUser reply = InfoUser.newBuilder().setName(result).build();
+        responseObserver.onNext(reply);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void insertRecord(recordEntity request, StreamObserver<recordEntity> responseObserver) {
+        recordDao.insertRecord(request.getName());
+        recordEntity reply = recordEntity.newBuilder().setName(request.getName()).build();
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
     }

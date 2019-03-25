@@ -5,10 +5,6 @@
     <select id="getAll" resultType="string" >
         select name from info_user
     </select>
-    <!--resultType="io.grpc.examples.Dream.InfoUser"-->
-    <!--<select id="findInfoUser"  resultType="io.grpc.examples.Dream.InfoUser"  parameterType="int">-->
-        <!--select name from info_user where id = #{id}-->
-    <!--</select>-->
     <select id="findInfoUser"  resultType="string"  parameterType="int">
         select name from info_user where id = #{id}
     </select>

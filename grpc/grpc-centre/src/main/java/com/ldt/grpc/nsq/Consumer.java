@@ -19,7 +19,7 @@ public class Consumer {
 //                获取订阅消息的内容
                 byte b[] = message.getMessage();
                 s=new String(b);
-                System.out.println(s);
+                System.out.println("获取消息成功"+s);
                 message.finished();
             }
         });

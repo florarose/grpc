@@ -1,8 +1,7 @@
 package com.ldt.grpc.Dao;
 
-import com.ldt.grpc.DBTools.DBTools;
+import com.ldt.grpc.DB.DBTools;
 import com.ldt.grpc.mapper.InfoUserMapper;
-import io.grpc.examples.Dream.InfoUser;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.logging.Logger;

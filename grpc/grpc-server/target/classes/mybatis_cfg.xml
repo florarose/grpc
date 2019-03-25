@@ -29,9 +29,6 @@
         </environment>
     </environments>
     <mappers>
-        <!--<mapper resource="com/ldt/grpc/mapper/InfoUserMapper.xml"/>-->
         <package name="com.ldt.grpc.mapper"/>
-        <!--<package name="com/ldt/grpc/mapper"/>-->
-        <!--<mapper url="file:///data/grpc/grpc-server/src/main/java/com/ldt/grpc/mapper/InfoUserMapper.xml"/>-->
     </mappers>
 </configuration>

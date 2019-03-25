@@ -1,7 +1,7 @@
 package com.ldt.grpc.Server;
 
-import com.ldt.grpc.PropertiesTest;
 import com.ldt.grpc.impl.UserServiceImpl;
+import com.ldt.grpc.properties.PropertiesTest;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
@@ -29,6 +29,7 @@ public class ServerGrpc {
                 // Use stderr here since the logger may have been reset by its JVM shutdown hook.
                 System.err.println("*** shutting down gRPC server since JVM is shutting down");
                 ServerGrpc.this.stop();
+                logger.info("Server stop, listening on " );
                 System.err.println("*** server shut down");
             }
         });

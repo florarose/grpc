@@ -215,6 +215,43 @@ public final class InfutureGrpc {
      }
      return getInsertUserMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getInsertRecordMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<io.grpc.examples.Dream.recordEntity,
+      io.grpc.examples.Dream.recordEntity> METHOD_INSERT_RECORD = getInsertRecordMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<io.grpc.examples.Dream.recordEntity,
+      io.grpc.examples.Dream.recordEntity> getInsertRecordMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<io.grpc.examples.Dream.recordEntity,
+      io.grpc.examples.Dream.recordEntity> getInsertRecordMethod() {
+    return getInsertRecordMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<io.grpc.examples.Dream.recordEntity,
+      io.grpc.examples.Dream.recordEntity> getInsertRecordMethodHelper() {
+    io.grpc.MethodDescriptor<io.grpc.examples.Dream.recordEntity, io.grpc.examples.Dream.recordEntity> getInsertRecordMethod;
+    if ((getInsertRecordMethod = InfutureGrpc.getInsertRecordMethod) == null) {
+      synchronized (InfutureGrpc.class) {
+        if ((getInsertRecordMethod = InfutureGrpc.getInsertRecordMethod) == null) {
+          InfutureGrpc.getInsertRecordMethod = getInsertRecordMethod = 
+              io.grpc.MethodDescriptor.<io.grpc.examples.Dream.recordEntity, io.grpc.examples.Dream.recordEntity>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "dream.Infuture", "insertRecord"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.examples.Dream.recordEntity.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.examples.Dream.recordEntity.getDefaultInstance()))
+                  .setSchemaDescriptor(new InfutureMethodDescriptorSupplier("insertRecord"))
+                  .build();
+          }
+        }
+     }
+     return getInsertRecordMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -290,6 +327,13 @@ public final class InfutureGrpc {
       asyncUnimplementedUnaryCall(getInsertUserMethodHelper(), responseObserver);
     }
 
+    /**
+     */
+    public void insertRecord(io.grpc.examples.Dream.recordEntity request,
+        io.grpc.stub.StreamObserver<io.grpc.examples.Dream.recordEntity> responseObserver) {
+      asyncUnimplementedUnaryCall(getInsertRecordMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -327,6 +371,13 @@ public final class InfutureGrpc {
                 io.grpc.examples.Dream.InfoUser,
                 io.grpc.examples.Dream.InfoUser>(
                   this, METHODID_INSERT_USER)))
+          .addMethod(
+            getInsertRecordMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.examples.Dream.recordEntity,
+                io.grpc.examples.Dream.recordEntity>(
+                  this, METHODID_INSERT_RECORD)))
           .build();
     }
   }
@@ -400,6 +451,14 @@ public final class InfutureGrpc {
       asyncUnaryCall(
           getChannel().newCall(getInsertUserMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void insertRecord(io.grpc.examples.Dream.recordEntity request,
+        io.grpc.stub.StreamObserver<io.grpc.examples.Dream.recordEntity> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getInsertRecordMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -465,6 +524,13 @@ public final class InfutureGrpc {
     public io.grpc.examples.Dream.InfoUser insertUser(io.grpc.examples.Dream.InfoUser request) {
       return blockingUnaryCall(
           getChannel(), getInsertUserMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public io.grpc.examples.Dream.recordEntity insertRecord(io.grpc.examples.Dream.recordEntity request) {
+      return blockingUnaryCall(
+          getChannel(), getInsertRecordMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -537,6 +603,14 @@ public final class InfutureGrpc {
       return futureUnaryCall(
           getChannel().newCall(getInsertUserMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.examples.Dream.recordEntity> insertRecord(
+        io.grpc.examples.Dream.recordEntity request) {
+      return futureUnaryCall(
+          getChannel().newCall(getInsertRecordMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SAY_HELLO = 0;
@@ -544,6 +618,7 @@ public final class InfutureGrpc {
   private static final int METHODID_GET_BY_USER_ID = 2;
   private static final int METHODID_GET_NAME_BY_ID = 3;
   private static final int METHODID_INSERT_USER = 4;
+  private static final int METHODID_INSERT_RECORD = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -581,6 +656,10 @@ public final class InfutureGrpc {
         case METHODID_INSERT_USER:
           serviceImpl.insertUser((io.grpc.examples.Dream.InfoUser) request,
               (io.grpc.stub.StreamObserver<io.grpc.examples.Dream.InfoUser>) responseObserver);
+          break;
+        case METHODID_INSERT_RECORD:
+          serviceImpl.insertRecord((io.grpc.examples.Dream.recordEntity) request,
+              (io.grpc.stub.StreamObserver<io.grpc.examples.Dream.recordEntity>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -648,6 +727,7 @@ public final class InfutureGrpc {
               .addMethod(getGetByUserIdMethodHelper())
               .addMethod(getGetNameByIdMethodHelper())
               .addMethod(getInsertUserMethodHelper())
+              .addMethod(getInsertRecordMethodHelper())
               .build();
         }
       }

@@ -1,8 +1,7 @@
 package com.ldt.grpc.ClientUse;
 
 import com.ldt.grpc.Client2;
-import com.ldt.grpc.Client3;
-import com.ldt.grpc.nsq.Produce;
+import com.ldt.grpc.Nsq.Produce;
 import com.ldt.grpc.constants.Constants;
 
 import java.util.logging.Logger;

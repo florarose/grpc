@@ -29,6 +29,11 @@ public final class DreamProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_dream_InfoUser_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_dream_recordEntity_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_dream_recordEntity_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -42,14 +47,17 @@ public final class DreamProto {
       "t\022\014\n\004name\030\001 \001(\t\"\027\n\tmyRequest\022\n\n\002id\030\001 \001(\005" +
       "\"g\n\010InfoUser\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\r" +
       "\n\005score\030\006 \001(\005\022\020\n\010password\030\003 \001(\t\022\017\n\007addre" +
-      "ss\030\004 \001(\t\022\017\n\007message\030\005 \001(\t2\221\002\n\010Infuture\0222" +
-      "\n\010SayHello\022\023.dream.HelloRequest\032\017.dream." +
-      "InfoUser\"\000\0227\n\rSayHelloAgain\022\023.dream.Hell" +
-      "oRequest\032\017.dream.InfoUser\"\000\0222\n\013getByUser" +
-      "Id\022\020.dream.myRequest\032\017.dream.InfoUser\"\000\022" +
-      "2\n\013getNameById\022\020.dream.myRequest\032\017.dream" +
-      ".InfoUser\"\000\0220\n\ninsertUser\022\017.dream.InfoUs" +
-      "er\032\017.dream.InfoUser\"\000B,\n\026io.grpc.example" +
+      "ss\030\004 \001(\t\022\017\n\007message\030\005 \001(\t\":\n\014recordEntit" +
+      "y\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010password\030" +
+      "\003 \001(\t2\315\002\n\010Infuture\0222\n\010SayHello\022\023.dream.H" +
+      "elloRequest\032\017.dream.InfoUser\"\000\0227\n\rSayHel" +
+      "loAgain\022\023.dream.HelloRequest\032\017.dream.Inf" +
+      "oUser\"\000\0222\n\013getByUserId\022\020.dream.myRequest" +
+      "\032\017.dream.InfoUser\"\000\0222\n\013getNameById\022\020.dre" +
+      "am.myRequest\032\017.dream.InfoUser\"\000\0220\n\ninser" +
+      "tUser\022\017.dream.InfoUser\032\017.dream.InfoUser\"" +
+      "\000\022:\n\014insertRecord\022\023.dream.recordEntity\032\023" +
+      ".dream.recordEntity\"\000B,\n\026io.grpc.example" +
       "s.DreamB\nDreamProtoP\001\242\002\003HLWb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
@@ -82,6 +90,12 @@ public final class DreamProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_dream_InfoUser_descriptor,
         new java.lang.String[] { "Id", "Name", "Score", "Password", "Address", "Message", });
+    internal_static_dream_recordEntity_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_dream_recordEntity_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_dream_recordEntity_descriptor,
+        new java.lang.String[] { "Id", "Name", "Password", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

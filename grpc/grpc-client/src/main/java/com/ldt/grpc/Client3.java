@@ -1,5 +1,6 @@
 package com.ldt.grpc;
 
+import com.ldt.grpc.properties.PropertiesTest;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;

@@ -38,11 +38,6 @@
              <artifactId>grpc-stub</artifactId>
              <version>${grpc.version}</version>
          </dependency>
-         <dependency>
-             <groupId>com.github.brainlag</groupId>
-             <artifactId>nsq-client</artifactId>
-             <version>1.0.0.RC4</version>
-         </dependency>
      </dependencies>
 
 
